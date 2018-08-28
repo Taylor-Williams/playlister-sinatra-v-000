@@ -1,5 +1,4 @@
 class SongsController < ApplicationController
-<<<<<<< HEAD
 
   get '/songs' do
     @songs = Song.all
@@ -41,6 +40,4 @@ class SongsController < ApplicationController
     redirect "/songs/#{@song.slug}"
   end
 
-=======
->>>>>>> 65ead0c298f53a8507a764ced7af5e09964f0f20
 end
