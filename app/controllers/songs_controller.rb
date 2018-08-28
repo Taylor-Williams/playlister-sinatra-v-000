@@ -69,7 +69,10 @@ class SongsController < ApplicationController
         end
       end
       (@song.genre_ids - params[:song][:genres][:ids]).each do |genre_id|
-        @song.song_genres.find_by(genre_id: genre_id)destroy
+        @song.song_genres.find_by(genre_id: genre_id).destroy
+      end
+      (params[:song][:genres][:ids] - @song.genre_ids).each do |genre_id|
+        @song.song_genres.find_by(genre_id: genre_id).destroy
       end
     end
     @song.save
