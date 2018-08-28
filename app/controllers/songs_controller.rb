@@ -1,6 +1,7 @@
 class SongsController < ApplicationController
-  use Rack::Flash
   enable :sessions
+  use Rack::Flash
+  
 
   get '/songs' do
     @songs = Song.all
