@@ -68,8 +68,8 @@ class SongsController < ApplicationController
           params[:song][:genres][:ids] << genre.id
         end
       end
-      params[:song][:genres][:ids].each do |genre_id|
-        @song.song_genres.create(genre_id: genre_id)
+      (@song.genre_ids - params[:song][:genres][:ids]).each do |genre_id|
+        @song.song_genres.find_by((genre_id: genre_id))destroy
       end
     end
     @song.save
