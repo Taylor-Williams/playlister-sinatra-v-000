@@ -29,18 +29,14 @@ class LibraryParser
 
   def build_objects(artist_name, song_name, genre_name)
     song = Song.create(name: song_name)
-<<<<<<< HEAD
     genre = Genre.find_or_create_by(name: genre_name, slug: Genre.make_slug(genre_name))
     artist = Artist.find_or_create_by(name: artist_name, slug: Artist.make_slug(artist_name))
     song.song_genres.build(genre: genre)
     song.artist = artist
-=======
     genre = Genre.find_or_create_by(name: genre_name)
     artist = Artist.find_or_create_by(name: artist_name)
     song.song_genres.build(genre: genre)
     song.artist = artist
-
->>>>>>> 65ead0c298f53a8507a764ced7af5e09964f0f20
     song.save
   end
 end
