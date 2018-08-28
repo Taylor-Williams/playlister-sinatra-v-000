@@ -20,6 +20,10 @@ class SongsController < ApplicationController
     erb :'/songs/show'
   end
 
+  get '/songs/:slug/edit' do
+    erb :'/songs/edit'
+  end
+
   post '/songs' do
     @song = Song.create(name: params[:song][:name])
     if params[:song][:artist][:id]
