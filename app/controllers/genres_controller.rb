@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class GenresController < ApplicationController
 
   get '/genres' do
@@ -11,7 +10,4 @@ class GenresController < ApplicationController
     erb :'/genres/show'
   end
 
-=======
-class GenressController < ApplicationController
->>>>>>> 65ead0c298f53a8507a764ced7af5e09964f0f20
 end
