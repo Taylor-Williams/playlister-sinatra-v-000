@@ -52,8 +52,8 @@ class SongsController < ApplicationController
     redirect "/songs/#{@song.slug}"
   end
 
-  patch '/songs' do
-    @song = Song.create(name: params[:song][:name])
+  patch '/songs/:slug' do
+    @song = Song.find_by_slug(slug: params[:slug])
     if params[:song][:artist][:id]
       @song.artist_id = params[:song][:artist][:id]
     end
