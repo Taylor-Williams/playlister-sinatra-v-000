@@ -1,8 +1,7 @@
 <h1>Edit a song!</h1>
 <form class="edit_song" action="/songs" method="post">
   <input id="hidden" type="hidden" name="_method" value="patch">
-  <label for="Name">Song Name:</label>
-  <input type="text" name="song[name]" id="Name">
+  <p>Song Name:<%=@song.name%></p>
   <br>
   <label for="song_artist">Is the artist any of the ones already in our library?</label>
   <%@artists.each do |artist|%>
